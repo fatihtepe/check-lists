@@ -7,7 +7,7 @@
 5. you can create as many as files here (working directory)
 6. git add . (staging area)
 7. git commit -m "testing something write here" (local repository)
-8. *git commit  - -amend   (you can change commit message even before push).(you can skip here, if you do not need to change it!!)*
+8. git commit  - -amend   (you can change commit message even before push).(you can skip here, if you do not need to change it!!)*
 9. git branch -m main (if your branch name is master change it to main if it is main, skip)
 10. Create a repository on Github [https://github.com/](https://github.com/) (copy url address of your repo)
 11. git remote add origin [git@github.com](mailto:git@github.com):fatihtepe/test.git  (remote repository github)

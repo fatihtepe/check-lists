@@ -13,3 +13,56 @@
 11. git remote add origin [git@github.com](mailto:git@github.com):fatihtepe/test.git  (remote repository github)
 12. git push -u origin main
 13. Check your github account you will see your repo there
+
+# Creating a Remote Repo on GitHub
+
+1. Sign into https://github.com (give a name (for example "creating_repoManual" this name will be directory name on your computer , select initiating Add a README file, Public etc.)
+2. Click 'Create repository' button
+3. Copy https url address [https://github.com/fatihtepe/creating_repoManual.git](https://github.com/fatihtepe/creating_repoManual.git)
+4. Open Terminal
+5. cd  where you keep your git repos
+6. git clone h[ttps://github.com/fatihtepe/creating_repoManual.git](https://github.com/fatihtepe/creating_repoManual.git)
+
+    now we cloned your github repository to our working area
+
+ 7. cd creating_repo Manual 
+
+8. You don`t need to use git init to initiate a repo when you clone it from remote
+
+9. git branch (before creating new new branch let's check where we are (q))
+
+10. git branch manual (creating manual branch)
+
+11. git checkout manual (we are now on manual branch)
+
+12. git branch ( check again and see the new branch green colored)
+
+13. touch repoManual.txt (creating a txt file etc.)
+
+14. ls (here you will see [README.md](http://readme.md) and repoManual.txt)
+
+15. open repoManual.txt file and work on it..
+
+15. cat repoManual.txt (you can check!) WORKING DIRECTORY
+
+16. git status (you will see there red coloured file/s)
+
+16. git add repoManual.txt ( or just dot . for all files, STAGING AREA)
+
+17. git commit -m "Repository Manual for Beginners" (committing Local Repository)
+
+18. git log (check your log)
+
+19. git push origin manual (pushing branch to remote..we do not need to use (git remote add origin) command because we cloned our repo from remote and both are already associated with each other)
+
+20. Let's go and check our github, remote, repo. We have two branch (main and manual)now. 
+
+21. Compare & pull request (click here to open pull request you will see there 'Able to merge' remark.your last commist message will be inserted automatically. Click green coloured 'Create pull request'
+
+22. Merge pull request (there you will see no conflict to merge and click Merge pull request)
+
+23. Confirm merge
+
+24. Pull request successfully merged and closed.
+
+25. Click Code tab to see how the repo looks like after merge. As you see manual branch is merged to the main branch.

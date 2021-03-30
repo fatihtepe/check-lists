@@ -1,9 +1,9 @@
 ### Create a local repo on your computer then push to Github ###
 
-1.  mkdir test   (on your terminal create a directory for example test)
+1. mkdir test   (on your terminal create a directory for example test)
 2. cd test 
 3. git init
-4. *echo "# test" >> [RE](http://read.md)ADME.md (if you will not creat readme on github create here)*
+4. echo "# test" >> [RE](http://read.md)ADME.md (if you will not creat readme on github create here)*
 5. you can create as many as files here (working directory)
 6. git add . (staging area)
 7. git commit -m "testing something write here" (local repository)

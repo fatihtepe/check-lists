@@ -29,7 +29,7 @@
 11. git checkout manual (we are now on manual branch)
 12. git branch ( check again and see the new branch green colored)
 13. touch repoManual.txt (creating a txt file etc.)
-14. ls (here you will see [README.md](http://readme.md) and repoManual.txt)
+14. ls (here you will see [README.md] and repoManual.txt)
 15. open repoManual.txt file and work on it..
 15. cat repoManual.txt (you can check!) WORKING DIRECTORY
 16. git status (you will see there red coloured file/s)

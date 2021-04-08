@@ -3,17 +3,13 @@
 1. mkdir test   (on your terminal create a directory for example test)
 2. cd test 
 3. git init
-4. echo "# test" >> [RE](http://read.md)ADME.md (if you will not creat readme on github create here)*
-5. you can create as many as files here (working directory)
-6. git add . (staging area)
-7. git commit -m "testing something write here" (local repository)
-8. git commit  - -amend   (you can change commit message even before push).(you can skip here, if you do not need to change it!!)*
-9. git branch -m main (if your branch name is master change it to main if it is main, skip)
-10. Create a repository on Github [https://github.com/](https://github.com/) (copy url address of your repo)
-11. git remote add origin [git@github.com](mailto:git@github.com):fatihtepe/test.git  (remote repository github)
-12. git pull origin main
-13. git push origin main
-14. Check your github account you will see your repo there
+4. git branch -m main (if your branch name is master change it to main if it is main, skip)
+5. Create a repository on Github [https://github.com/](https://github.com/) (copy url address of your repo)
+6. git remote add origin [git@github.com](mailto:git@github.com):fatihtepe/test.git  (remote repository github)
+7. git pull origin main
+8. here you can create as many as file you want then git add . ==> git commit -m 'message'
+9. git push origin main
+10. Check your github account you will see your repo there
 
 #### Creating a Remote Repo on GitHub ###
 

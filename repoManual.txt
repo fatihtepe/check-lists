@@ -21,7 +21,7 @@
 6. git clone h[ttps://github.com/fatihtepe/creating_repoManual.git](https://github.com/fatihtepe/creating_repoManual.git) now we cloned your github repository to our working area
 7. cd creating_repo Manual 
 8. You don`t need to use git init to initiate a repo when you clone it from remote
-9. git branch (before creating new new branch let's check where we are (q))
+9. git branch (before creating new new branch let's check where we are 
 10. git branch manual (creating manual branch)
 11. git checkout manual (we are now on manual branch)
 12. git branch ( check again and see the new branch green colored)

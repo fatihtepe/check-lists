@@ -1,0 +1,28 @@
+# Undoing Git Checklist
+
+We stage our file with 'git add . (File name)' and to commit 'git commit -m 'message'
+
+To undo these changes..
+
+After git add . ==> To Undo these command 
+
+1. git reset README.md (file name here it is README file) 
+
+To Undo Commit
+
+1. git reset HEAD~1 (HEAD point last commit go 1 back)
+
+
+You can check the results with git status / git diff
+
+
+GIT RESET 
+
+You can go with git reset any point of git process by using "git reset (log number)" (git log) It will onstage every change you made till there. 
+
+
+To completely not only onstage but also remove all changes..
+
+
+1. git reset --hard  9a105b30aaab291bb46f19578eb18830302a1b7c
+

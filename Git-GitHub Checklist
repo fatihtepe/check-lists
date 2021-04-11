@@ -1,0 +1,84 @@
+Public Repository-GitHub Checklist
+
+1. Create a public repository in GitHub
+2. Clone your remote repository to your computer (Open Terminal)
+	-	mkdir directoryname
+	-	cd directoryname
+	-	git clone url...(copy from GitHub)
+3. cd directory where you cloned your remote repo
+4. git status (on branch main)
+5. Create a file/s
+	-	touch file.txt (touch file.txt)
+	-	vim/nano file.txt (do your work there)
+6. git status (untracked files)
+7. stage it ==> git add . (or write file name/s)
+8. git status (see your file/s is ready to commit)
+9. git commit -m 'any message related to your work update use simple tense'
+10. git status (see your commit there ready to push to remote repo)
+11. See the commit history
+	-	git log 
+	-	git log --pretty=oneline
+	-	git log --oneline
+12. git push (send the changes to your remote repo)
+13. Go to your GitHub account and see the changes
+14. Create new file on your GitHub (ex: test.html)
+15. Commit new file on GitHub
+16. Check your GitHub you can see your all commits there.
+17. Go to terminal 
+18. git log (you will not see any changes yet)
+20. git fetch (or skip 20, 21, 22, 23 go directly 24)
+	-	this command tells your local git to retrieve the 
+		latest meta-data info from the original (yet doesn't do 
+		any file transferring. It's more like just checking to see 
+		if there are any changes available)
+21. git diff main origin/main 
+	-	see changes in local repository 
+22. git merge 
+	-	Combine main and origin/main
+23. ls -l (see all files )
+24. git pull 
+	-	brings (copy) those changes from the remote repository
+25. ls -l (see all files)
+26. git log --oneline (see latest log there[create test.html])
+27. git branch newbranch (you are creating new banch named newbranch here) (see 29)
+	-	See branches 
+		- git branch (show local branchs)
+		- git branch -r (show remote branches)
+		- git branch -a (show all local and remote branches)
+28. git checkout newbranch (or you can write (git switch newbranch))
+29. git checkout -b newbranch (here you can create a newbranch and switch it)
+	-	with this command you can skip 27 and 28 steps.
+30. ls or/and git status 
+	-	List the files and check the status of the working directory
+31. Here you can make any changes on your file/s
+	-	vim file.txt etc.
+32. Repeat 6, 7, 8 , 9, 10, 11, 
+33. We are still on newbranch ==> git checkout main
+	-	Switch the main branch and see the content of the​ test.txt
+	-	cat file.txt
+	-	no changes yet
+34. git merge newbranch (we merged newbranch with main branch)
+	-	cat file.txt (see the changes)
+35. git push (Send the changes to the remote repository)
+36. Go and check the remote repository
+37. Go to Terminal if you want you can delete newbranch (you need to checkout 
+	if you are currenly in the branch you want ot remove)
+	- 	git branch -d (newbranch)
+	-	git branch -D (newbranch)
+	### Note: The -d option is an alias for --delete, which only deletes 
+	the branch if it has already been fully merged in its upstream branch. 
+	You could also use -D, which is an alias for --delete --force, which deletes 
+	the branch "irrespective of its merged status.###
+
+
+
+
+
+
+
+
+
+
+
+
+

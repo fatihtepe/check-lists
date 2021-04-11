@@ -1,0 +1,41 @@
+Forking a project!
+
+# Most of the time, people fork projects to propose 
+	changes to someone else’s project.
+
+1. Find the repository you want to fork on GitHub on right corner, Click Fork
+2. Then choose your github account now it is your repository
+3. Copy the url from your account 
+2. Open Terminal cd where you want to clone
+3. git clone https://github.com/fatihtepe/python.git
+4. cd (directory which you cloned/forked)
+5. ls (to see files in directory)
+7. git remote -v (see where you are)
+6. git branch (see what branch/es you have)
+7. git checkout -b newbranch (create and swithch newbranch)
+8. git status (you are on new branch and nothing to commit)
+9. ls (to see files in directory(same files in main branch))
+10. vim file (choose a file to make some changes)
+11. git status
+12. git add . (to stage changes dot for all files or you can write the file name)
+13. git status (changes ready for committing)
+14. git commit - m 'message' (commit file/s)
+15  git status (working tree clean)
+16. git remote -v (you will see your GitHub account we are still here)
+17. git remote add upstream git@github.com:TylerCounter/python.git (this url is forked url not ours
+	here we are checking to see wether any changes or not on the forked repo..remember normally we
+	used 'git remote add origin' here this is others repo so we use upstream not origin here)			
+18. git remote -v (now you will see origin repo address and upstream(forked) url here "verify the new 
+	repository you've specified for your fork)
+19. git pull upstream main (same here not origin we use upstream to see any changes)
+20. git push -u origin newbranch 
+21  open your GitHub account you will see there "compare & pull request" green lighted click it.
+21. Open a pull request page is opened and you will see "Create pul request" green lighted write your
+	request what you did to the owner of upstream repo) click it
+22. Now my request was created. It will be checked by other upstream repo owner.
+
+
+
+
+
+

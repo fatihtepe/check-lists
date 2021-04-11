@@ -1,4 +1,4 @@
-### Create a local repo on your computer then push to Github ###
+### Create a local repo on your computer then push to Github (without using git clone) ###
 
 1. mkdir test   (on your terminal create a directory for example test)
 2. cd test 
@@ -8,7 +8,7 @@
 6. git remote add origin [git@github.com](mailto:git@github.com):fatihtepe/test.git  (remote repository github)
 7. git pull origin main
 8. here you can create as many as file you want then git add . ==> git commit -m 'message'
-9. git push origin main (git push)
+9. git push origin main 
 10. Check your github account you will see your repo there
 
 #### Creating a Remote Repo on GitHub ###

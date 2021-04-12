@@ -30,9 +30,9 @@ Forking a project!
 19. git pull upstream main (same here not origin we use upstream to see any changes)
 20. git push -u origin newbranch 
 21  open your GitHub account you will see there "compare & pull request" green lighted click it.
-21. Open a pull request page is opened and you will see "Create pul request" green lighted write your
+22. Open a pull request page is opened and you will see "Create pul request" green lighted write your
 	request what you did to the owner of upstream repo) click it
-22. Now my request was created. It will be checked by other upstream repo owner.
+23. Now my request was created. It will be checked by other upstream repo owner.
 
 
 

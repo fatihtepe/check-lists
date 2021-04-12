@@ -2,7 +2,7 @@
 
 1. mkdir test   (on your terminal create a directory for example test)
 2. cd test 
-3. git init
+3. git init (or you can skip 1., 2., steps and directly write "git init test" (directory name)
 4. git branch -m main (if your branch name is master change it to main if it is main, skip)
 5. Create a repository on Github [https://github.com/](https://github.com/) (copy url address of your repo)
 6. git remote add origin [git@github.com](mailto:git@github.com):fatihtepe/test.git  (remote repository github)

@@ -8,6 +8,7 @@
 6. git remote add origin [git@github.com](mailto:git@github.com):fatihtepe/test.git  (remote repository github)
 7. git pull origin main
 8. here you can create as many as file you want then git add . ==> git commit -m 'message'
+	if you want to change your message ==> git commit --amend -m "write your new message"
 9. git push origin main 
 10. Check your github account you will see your repo there
 

@@ -12,7 +12,7 @@ Forking a project!
 5. ls (to see files in directory)
 7. git remote -v (see where you are)
 6. git branch (see what branch/es you have)
-7. git checkout -b newbranch (create and swithch newbranch)
+7. git checkout -b newbranch (create and switch newbranch)
 8. git status (you are on new branch and nothing to commit)
 9. ls (to see files in directory(same files in main branch))
 10. vim file (choose a file to make some changes)

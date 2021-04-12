@@ -18,7 +18,9 @@ You can check the results with git status / git diff
 
 GIT RESET 
 
-You can go with git reset any point of git process by using "git reset (log number)" (git log) It will onstage every change you made till there. 
+You can go with git reset any point of git process by using 
+"git reset (log number)" (git log) It will onstage every change 
+you made till there. 
 
 
 To completely not only onstage but also remove all changes..

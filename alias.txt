@@ -1,0 +1,13 @@
+# What is alias?
+ "Aliases are used to create shorter commands that map to longer commands."
+
+1. Open your terminal
+2. git config --global alias.lg "log --graph --decorate --oneline --all"
+3. git lg (you will see  graphic log details)
+
+That's it. You can also use below command..
+
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status

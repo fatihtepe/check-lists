@@ -1,3 +1,6 @@
+Prepared by Fatih Tepe April 10, 2021.
+
+
 # What is alias?
  "Aliases are used to create shorter commands that map to longer commands."
 

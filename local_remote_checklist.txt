@@ -1,3 +1,6 @@
+Prepared by Fatih Tepe April 10, 2021.
+
+
 ### Create a local repo on your computer then push to Github (without using git clone) ###
 
 1. mkdir test   (on your terminal create a directory for example test)

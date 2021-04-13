@@ -1,3 +1,5 @@
+Prepared by Fatih Tepe April 10, 2021.
+
 # Undoing Git Checklist
 
 We stage our file with 'git add . (File name)' and to commit 'git commit -m 'message'

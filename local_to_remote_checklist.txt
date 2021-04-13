@@ -1,0 +1,25 @@
+Prepared by Fatih Tepe April 10, 2021.
+
+
+### Create a local repo on your computer then push to Github (without using git clone) ###
+
+1. mkdir test   (on your terminal create a directory for example test)
+2. cd test 
+3. git init (or you can skip 1., 2., steps and directly write "git init test" (directory name)
+4. git branch -m main (if your branch name is master change it to main if it is main, skip)
+5. Create a repository on Github [https://github.com/](https://github.com/) (copy url address of your repo)
+6. git remote add origin [git@github.com](mailto:git@github.com):fatihtepe/test.git  (remote repository github)
+7. git pull origin main
+8. here you can create as many as file you want then git add . ==> git commit -m 'message'
+	if you want to change your message ==> git commit --amend -m "write your new message"
+	""" After git add . ==> To Undo these command 
+
+		1. git reset README.md (file name here it is README file) 
+
+		To Undo Commit
+
+		1. git reset HEAD~1 (HEAD point last commit go 1 back)"""
+
+9. git push origin main 
+10. Check your github account you will see your repo there
+

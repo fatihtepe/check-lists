@@ -134,10 +134,28 @@ SELECT SUM(salary)
 FROM employees
 WHERE gender = 'Male'
 
-SELECT SUM  (Quantity) AS total_quantitity_of_invoices
+SELECT SUM (Total) 
+FROM invoices;
+
+SELECT SUM (Total)  AS sum_of_total_revenue
+FROM invoices;
+
+SELECT SUM(Quantity) AS total_quantitity_of_invoices
 FROM invoice_items;
 
-SELECT AVG  (Quantity) AS average_of_invoices
+SELECT DISTINCT strftime('%Y' , InvoiceDate)
+FROM invoices; ===>> EXTRACT YEAR.. FOR MONTH YOU CAN USE %m or for day %d
+
+SELECT name 
+FROM tracks
+WHERE Milliseconds > (SELECT AVG (Milliseconds)
+FROM tracks);
+
+SELECT name 
+FROM tracks
+WHERE Milliseconds > 393599.212103911
+
+SELECT AVG(Quantity) AS average_of_invoices
 FROM invoice_items;
 
 SELECT AVG(salary)
@@ -158,6 +176,11 @@ SELECT AVG(grade) AS average_grade FROM student_table;
 SELECT AVG(grade) AS average_grade FROM student_table WHERE lesson = 'Physics';
 
 SELECT gender, COUNT(job_title) FROM employees WHERE job_title = 'Data Scientist' GROUP BY gender;
+
+SELECT gender, count(gender)
+FROM employees
+GROUP BY gender
+
 
 SELECT gender, MIN(salary) AS min_salary
 FROM employees
@@ -181,9 +204,42 @@ FROM employees
 GROUP BY gender
 ORDER BY total_salary DESC;
 
-SELECT first_name, last_name, gender, AVG(salary) FROM employees WHERE job_title = 'Data Scientist' GROUP BY gender ORDER BY last_name DESC;
+SELECT first_name, last_name, gender, AVG(salary) 
+FROM employees WHERE job_title = 'Data Scientist' 
+GROUP BY gender 
+ORDER BY last_name DESC;
 
-SELECT dept_name, SUM(salary) AS total_salary FROM department GROUP BY dept_name;
+SELECT dept_name, SUM(salary) AS total_salary 
+FROM department 
+GROUP BY dept_name;
+
+SELECT gender, job_title, gender, COUNT(gender)
+FROM employees
+WHERE job_title = 'Data Scientist'
+GROUP BY job_title, gender;
+
+SELECT job_title, gender, count(gender)
+FROM employees
+GROUP BY job_title, gender;
+
+SELECT Composer, count(TrackId)
+FROM tracks
+WHERE Composer IS NOT NULL
+GROUP BY Composer;
+
+SELECT Country, count(CustomerId)
+FROM customers
+GROUP BY Country;
+
+SELECT AlbumId, MIN(Milliseconds)
+FROM tracks
+GROUP BY AlbumId;
+
+SELECT BillingCountry, SUM( total)
+FROM invoices
+GROUP BY BillingCountry;
+
+---------------------------------------------
 
 SELECT columns
 FROM table_A

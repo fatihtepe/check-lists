@@ -38,10 +38,65 @@ SELECT first_name, last_name, salary FROM employees ORDER BY salary DESC;
 
 SELECT * FROM employees ORDER BY gender, first_name DESC;
 
-SELECT * FROM employees ORDER BY hire_date ASC LIMIT 1
+SELECT * FROM employees ORDER BY gender DESC, first_name ASC;
 
+SELECT column_name(s)
+FROM table name
+WHERE condition
+ORDER BY column_name(s)
 
-SELECT COUNT(*) AS count_of_state FROM student_info WHERE state = 'Virginia';
+SELECT * FROM employees ORDER BY hire_date ASC LIMIT 1;
+
+SELECT * FROM employees WHERE salary > 80000 ORDER BY first_name DESC;
+
+SELECT * FROM invoices WHERE Total > 10 ORDER BY Total DESC;
+
+SELECT * FROM employees WHERE job-title = 'Data Scientists' OR gender = 'Male';
+
+SELECT * FROM employees WHERE NOT gender = 'Female';
+
+SELECT *
+FROM invoices
+WHERE NOT BillingCountry = "USA"
+ORDER BY total ASC;
+
+SELECT * FROM employees WHERE salary BETWEEN 8000 AND 9000;
+
+SELECT * FROM invoices WHERE InvoiceDate BETWEEN '2009-01-01' AND '2011-12-31' 
+ORDER BY InvoiceDate DESC LIMT 1; 
+### IF DATE IS DATE TIME BETWEEN WILL NOT COVER LAST DAY THEREFORE WE NEED ADD NEXT DAY! 
+==>DATA TIME 2021-04-29 00:00:00
+
+SELECT * 
+FROM employees
+WHERE job_title = 'Data Scientist' OR job_title = 'Sales Manager'
+
+SELECT * 
+FROM employees
+WHERE job_title IN ('Data Scientist', 'Sales Manager')
+
+SELECT * 
+FROM employees
+WHERE first_name LIKE 'R%'
+
+SELECT * 
+FROM employees
+WHERE first_name LIKE '__v%'
+
+SELECT *
+FROM tracks
+WHERE Composer LIKE '%Bach';
+
+------------------------------------------------
+SELECT COUNT (InvoiceId) 
+FROM Invoices;
+
+SELECT 
+COUNT(DISTINCT composer) 
+FROM tracks 
+WHERE Composer IS NOT NULL;
+
+SELECT COUNT (*) AS count_of_state FROM student_info WHERE state = 'Virginia';
 
 SELECT COUNT (*) AS count_of_employees FROM employees;
 
@@ -75,15 +130,24 @@ SELECT start_date FROM student_info WHERE gender = 'M' ORDER BY start_date DESC 
 
 SELECT SUM(salary) AS salary_of_male_employees FROM employees WHERE gender = 'Male';
 
+SELECT SUM(salary)
+FROM employees
+WHERE gender = 'Male'
+
 SELECT SUM  (Quantity) AS total_quantitity_of_invoices
 FROM invoice_items;
 
 SELECT AVG  (Quantity) AS average_of_invoices
 FROM invoice_items;
 
+SELECT AVG(salary)
+FROM employees
+WHERE gender = 'Male'
+
 SELECT AVG(salary) AS salary_of_female_employees FROM employees WHERE gender = 'Female';
 
-SELECT SUM(salary) AS salary_of_female_employees, COUNT(salary) AS count_of_female_salary, SUM(salary)/COUNT(salary) AS average_salary, AVG(salary) AS avg_salary FROM employees WHERE gender = 'Female';
+SELECT SUM(salary) AS salary_of_female_employees, COUNT(salary) AS count_of_female_salary, 
+SUM(salary)/COUNT(salary) AS average_salary, AVG(salary) AS avg_salary FROM employees WHERE gender = 'Female';
 
 SELECT SUM(grade) AS total_grade FROM student_table;
 

@@ -83,7 +83,8 @@ FROM invoice_items;
 
 SELECT AVG(salary) AS salary_of_female_employees FROM employees WHERE gender = 'Female';
 
-SELECT SUM(salary) AS salary_of_female_employees, COUNT(salary) AS count_of_female_salary, SUM(salary)/COUNT(salary) AS average_salary, AVG(salary) AS avg_salary FROM employees WHERE gender = 'Female';
+SELECT SUM(salary) AS salary_of_female_employees, COUNT(salary) AS count_of_female_salary, 
+SUM(salary)/COUNT(salary) AS average_salary, AVG(salary) AS avg_salary FROM employees WHERE gender = 'Female';
 
 SELECT SUM(grade) AS total_grade FROM student_table;
 

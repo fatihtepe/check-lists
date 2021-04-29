@@ -1,0 +1,16 @@
+Thanks Sergio Taco!
+
+This is a tutorial for publishing your HTML/CSS workshop document on github.
+Here are the steps:
+
+1. First of all go to your github account by using your own credentials.
+2. create a new repo:
+	name: html/css-workshop.github.io
+	public
+	add a readme file
+3. create a branch named "gh-pages"
+4. upload your files
+5. go to settings and find github pages
+6. select "gh-pages" and save in the source section if not selected.
+7. see the "Your site is published at https://sergiotaco.github.io/html-css-workshop/" warning at the same page and click the link.
+8. your site has been published

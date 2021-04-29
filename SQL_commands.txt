@@ -1,0 +1,190 @@
+### Prepared by Fatih Tepe on April 29, 2021 ###
+
+
+SELECT *
+FROM employees
+WHERE salary
+BETWEEN 75000 AND 95000;
+
+SELECT *
+FROM employees
+WHERE salary NOT BETWEEN 75000 AND 95000 ORDER BY salary DESC;
+
+SELECT *
+FROM employees
+WHERE hire_date BETWEEN '2018-01-01' AND '2018-12-31' ORDER BY hire_date;
+
+SELECT *
+FROM student_info
+WHERE field IN ('Data Analysis', 'Data Science', 'DevOps');
+
+SELECT *
+FROM student_info
+WHERE state = 'Virginia' and field IN ('Data Analysis', 'Data Science', 'DevOps');
+
+SELECT first_name, last_name, field
+FROM student_info WHERE field LIKE '%ata%'
+ORDER BY first_name DESC, last_name;
+
+SELECT last_name
+FROM student_info
+WHERE last_name LIKE '%er%';
+
+SELECT first_name
+FROM student_info
+WHERE first_name LIKE '*r*_';
+
+SELECT first_name, last_name, salary FROM employees ORDER BY salary DESC;
+
+SELECT * FROM employees ORDER BY gender, first_name DESC;
+
+SELECT * FROM employees ORDER BY hire_date ASC LIMIT 1
+
+
+SELECT COUNT(*) AS count_of_state FROM student_info WHERE state = 'Virginia';
+
+SELECT COUNT (*) AS count_of_employees FROM employees;
+
+SELECT COUNT (*) AS count_of_city FROM employees WHERE City = "Calgary";
+
+SELECT COUNT (*) AS number_of_students FROM student_info WHERE state = 'West Virginia';
+
+SELECT COUNT (*) AS number_of_students FROM student_info WHERE gender = 'F' AND state = 'Virginia';
+
+SELECT COUNT(DISTINCT job_title) AS number_of_titles FROM employees;
+
+SELECT salary AS lowest_salary
+FROM employees
+WHERE gender = 'Female'
+ORDER BY salary
+LIMIT 1;
+
+SELECT salary AS highest_salary
+FROM employees
+WHERE gender = 'Male'
+ORDER BY salary DESC
+LIMIT 1;
+
+SELECT MIN(start_date) AS earliest_date FROM student_info WHERE gender = 'F';
+
+SELECT start_date FROM student_info WHERE gender = 'F' ORDER BY start_date ASC LIMIT 1;
+
+SELECT MAX(start_date) AS newest_date FROM student_info WHERE gender = 'M';
+
+SELECT start_date FROM student_info WHERE gender = 'M' ORDER BY start_date DESC LIMIT 1;
+
+SELECT SUM(salary) AS salary_of_male_employees FROM employees WHERE gender = 'Male';
+
+SELECT SUM  (Quantity) AS total_quantitity_of_invoices
+FROM invoice_items;
+
+SELECT AVG  (Quantity) AS average_of_invoices
+FROM invoice_items;
+
+SELECT AVG(salary) AS salary_of_female_employees FROM employees WHERE gender = 'Female';
+
+SELECT SUM(salary) AS salary_of_female_employees, COUNT(salary) AS count_of_female_salary, SUM(salary)/COUNT(salary) AS average_salary, AVG(salary) AS avg_salary FROM employees WHERE gender = 'Female';
+
+SELECT SUM(grade) AS total_grade FROM student_table;
+
+SELECT SUM(grade) AS total_grade FROM student_table WHERE lesson = 'Mathematics';
+
+SELECT AVG(grade) AS average_grade FROM student_table;
+
+SELECT AVG(grade) AS average_grade FROM student_table WHERE lesson = 'Physics';
+
+SELECT gender, COUNT(job_title) FROM employees WHERE job_title = 'Data Scientist' GROUP BY gender;
+
+SELECT gender, MIN(salary) AS min_salary
+FROM employees
+GROUP BY gender;
+
+SELECT gender, MAX(salary) AS max_salary
+FROM employees
+GROUP BY gender;
+
+SELECT gender, SUM(salary) AS total_salary
+FROM employees
+GROUP BY gender;
+
+SELECT gender, AVG(salary) AS average_salary
+FROM employees
+GROUP BY gender;
+
+SELECT gender,
+SUM(salary) AS total_salary
+FROM employees
+GROUP BY gender
+ORDER BY total_salary DESC;
+
+SELECT first_name, last_name, gender, AVG(salary) FROM employees WHERE job_title = 'Data Scientist' GROUP BY gender ORDER BY last_name DESC;
+
+SELECT dept_name, SUM(salary) AS total_salary FROM department GROUP BY dept_name;
+
+SELECT columns
+FROM table_A
+INNER JOIN table_B
+ON join_conditions1 AND join_conditions2
+INNER JOIN table_C
+ON join_conditions3 OR join_conditions4
+
+SELECT *
+FROM employees
+INNER JOIN departments
+ON employees.emp_id = departments.emp_id;
+
+SELECT
+employees.emp_id,
+employees.first_name,
+employees.last_name,
+departments.dept_name,
+departments.dept_id
+FROM employees
+INNER JOIN departments
+ON employees.emp_id = departments.emp_id;
+
+SELECT
+employees.first_name,
+employees.last_name,
+employees.salary,
+departments.dept_name
+FROM employees
+INNER JOIN departments
+ON employees.emp_id = departments.emp_id WHERE salary > '80000'
+
+SELECT
+employees.first_name,
+employees.last_name,
+employees.salary,
+departments.dept_name
+FROM employees
+INNER JOIN departments
+ON employees.emp_id = departments.emp_id
+WHERE gender = 'Female'
+
+SELECT
+employees.first_name,
+employees.last_name,
+employees.emp_id
+FROM employees
+LEFT JOIN departments
+ON employees.emp_id = departments.emp_id;
+
+SELECT
+employees.emp_id,
+employees.first_name,
+employees.last_name,
+departments.dept_name,
+departments.dept_id
+FROM employees
+LEFT JOIN departments
+ON employees.emp_id = departments.emp_id;
+
+SELECT
+employees.first_name,
+employees.last_name,
+departments.dept_name,
+departments.dept_id
+FROM employees
+LEFT OUTER JOIN departments ON
+employees.emp_id = departments.emp_id WHERE gender = 'Male';

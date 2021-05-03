@@ -1,0 +1,136 @@
+### Subqueries ###
+Prepared by Fatih Tepe <==> May 03, 2021
+
+
+SELECT column_name
+FROM table_1, table_2
+WHERE column_name OPERATOR (
+	SELECT column_name
+	FROM table_1, table_2);
+
+
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary > 
+    (SELECT salary 
+     FROM employees
+     WHERE first_name = "Rodney");
+
+
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary > 
+    (SELECT AVG(salary) 
+     FROM employees);
+
+
+SELECT first_name, last_name
+FROM employees
+WHERE emp_id IN
+   (SELECT emp_id 
+    FROM departments
+    WHERE dept_name = 'Operations');
+
+
+SELECT *
+FROM customers
+WHERE CustomerID NOT IN
+	(SELECT customerid
+	 FROM orders);
+
+
+SELECT first_name, last_name
+FROM employees
+WHERE emp_id IN
+    (SELECT emp_id
+     FROM departments
+     WHERE dept_name = 'Marketing');
+
+
+SELECT COUNT(gender) AS count_male
+FROM employees
+WHERE gender = 'Male' AND emp_id IN 
+    (SELECT emp_id
+     FROM departments
+     WHERE dept_name = 'Operations');
+
+
+'''Introduction to DDL Commands
+Data Types'''
+
+SELECT typeof(emp_id),
+typeof(first_name),
+typeof(hire_date)
+FROM employees
+LIMIT 1;
+
+
+.table
+
+
+CREATE TABLE teachers (
+  name TEXT,
+  lesson TEXT,
+  salary INT
+);
+
+
+CREATE TABLE employees(
+emp_id INT NOT NULL PRIMARY KEY,
+first_name TEXT,
+last_name TEXT,
+salary INT,
+job_title TEXT,
+gender TEXT,
+hire_date TEXT);
+
+
+CREATE TABLE customers (customer_id INT PRIMARY KEY,
+first_name TEXT,
+second_name TEXT); <===> PARENT TABLE!!!
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    order_number INT,
+    customer_id INT,
+    FOREIGN KEY (customer_id)
+     REFERENCES customers (customer_id)); <==> CHILD TABLE!!!
+
+''' In the orders table, we defined the FOREIGN KEY for the 
+customer_id column and pointed it using REFERENCES to the customer_id
+ column in the customers table.'''
+
+
+
+INSERT INTO customers (customer_id, first_name, last_name)
+VALUES (1, 'Robert', 'Cursor'),
+       (2, 'Julia', 'Loyds'),
+       (3, 'Jack', 'Morgten');
+
+
+INSERT INTO orders (order_id, order_number, customer_id)
+VALUES (1, 101, 3),
+       (2, 102, 3),
+       (3, 103, 2),
+       (4, 104, 1);
+
+
+CREATE TABLE orders (
+order_id INT PRIMARY KEY,
+order_number INT NOT NULL,
+customer_id INT,
+   FOREIGN KEY (customer_id)
+     REFERENCES customers (customer_id)
+
+
+ALTER TABLE existing_table
+RENAME TO new_table;
+
+
+ALTER TABLE table
+ADD COLUMN column_definition;
+
+
+DROP TABLE table_name;
+
+

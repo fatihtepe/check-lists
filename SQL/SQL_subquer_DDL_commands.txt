@@ -8,6 +8,14 @@ WHERE AlbumId = (SELECT AlbumID
 		    WHERE Title = 'Faceless')
 
 
+SELECT tracks.TrackId, albums.AlbumId, tracks.name, albums.Title
+FROM tracks
+JOIN albums ON albums.AlbumId = tracks.AlbumId
+WHERE albums.Title LIKE %Faceless%;
+###Thanks to 'C8369 - Han'###
+
+
+
 SELECT column_name
 FROM table_1, table_2
 WHERE column_name OPERATOR (

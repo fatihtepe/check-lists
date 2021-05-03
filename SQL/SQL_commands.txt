@@ -240,6 +240,7 @@ FROM invoices
 GROUP BY BillingCountry;
 
 ---------------------------------------------
+INNER JOIN
 ---------------------------------------------
 SELECT columns
 FROM table_A
@@ -282,37 +283,9 @@ INNER JOIN departments
 ON employees.emp_id = departments.emp_id
 WHERE gender = 'Female'
 
-SELECT
-employees.first_name,
-employees.last_name,
-employees.emp_id
-FROM employees
-LEFT JOIN departments
-ON employees.emp_id = departments.emp_id;
-
-SELECT
-employees.emp_id,
-employees.first_name,
-employees.last_name,
-departments.dept_name,
-departments.dept_id
-FROM employees
-LEFT JOIN departments
-ON employees.emp_id = departments.emp_id;
-
-SELECT
-employees.first_name,
-employees.last_name,
-departments.dept_name,
-departments.dept_id
-FROM employees
-LEFT OUTER JOIN departments ON
-employees.emp_id = departments.emp_id WHERE gender = 'Male';
-
-
 SELECT t.Name, g.name
 FROM tracks AS t
-JOin genres AS g
+JOIN genres AS g
 ON t.GenreId = g.GenreId 
 
 
@@ -327,8 +300,76 @@ ON t.GenreId = g.GenreId) newtablename;
 
 
 
+SELECT i.InvoiceId, c.FirstName, c.LastName 
+FROM customers c.
+INNER JOIN invoices i
+ON c.CustomerId = i.CustomerId
+
+
+
+SELECT i.InvoiceId, c.FirstName, c.LastName 
+FROM customers c.
+JOIN invoices i
+ON c.CustomerId = i.CustomerId
+
+
+
+--------LEFT JOIN-------
+FROM table (left table) LEFT JOIN (second table)
+
+SELECT
+tests.exam, tests, 
+passing_score,
+students.name, 
+students.score
+FROM tests
+LEFT JOIN students ON tests.exam = students.exam;
+
+
+SELECT 
+ar.ArtistId, 
+ar.name, 
+al.AlbumId, 
+al.Title
+FROM artists ar
+LEFT JOIN albums al
+ON ar.ArtistId = al. ArtistId
+
+
+SELECT
+employees.first_name,
+employees.last_name,
+employees.emp_id
+FROM employees
+LEFT JOIN departments
+ON employees.emp_id = departments.emp_id;
+
+
+
+SELECT
+employees.emp_id,
+employees.first_name,
+employees.last_name,
+departments.dept_name,
+departments.dept_id
+FROM employees
+LEFT JOIN departments
+ON employees.emp_id = departments.emp_id;
+
+
+
+SELECT
+employees.first_name,
+employees.last_name,
+departments.dept_name,
+departments.dept_id
+FROM employees
+LEFT OUTER JOIN departments ON
+employees.emp_id = departments.emp_id WHERE gender = 'Male';
+
+
 ----------------------------------------------------
-Below this point prepared by C8162 - Aziz! 
+Below this point prepared by C8162 - Aziz! Thank you.. 
 
 SELECT COUNT (InvoiceId)
 FROM invoices;

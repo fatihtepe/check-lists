@@ -1,6 +1,12 @@
 ### Subqueries ###
 Prepared by Fatih Tepe <==> May 03, 2021
 
+SELECT TrackId, name, AlbumId
+FROM tracks
+WHERE AlbumId = (SELECT AlbumID 
+		    FROM albums
+		    WHERE Title = 'Faceless')
+
 
 SELECT column_name
 FROM table_1, table_2

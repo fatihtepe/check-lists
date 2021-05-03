@@ -1,0 +1,232 @@
+SQL Fundemental
+
+Write a query that returns the tracks name using tracks table.
+Müzik parçaları tablosundan parçaların isimlerini getiren (döndüren) bir sorgu yazın.
+Answer:
+SELECT name 
+FROM tracks;
+
+Write a query that returns the tracks name and its composer using tracks table.
+Müzik parçaları tablosundan parçaların isimlerini ve bestecilerini getiren (döndüren)  bir sorgu yazın.
+Answer:
+SELECT name, Composer 
+FROM tracks;
+
+Write a query that returns all columns of albums table.
+Albümler tablosundan tüm sütunları getiren (döndüren)  bir sorgu yazın.
+Answer:
+SELECT AlbumId, Title, ArtistId 
+FROM albums;
+
+Write a query that returns all columns of albums table.
+Albümler tablosundan tüm sütunları getiren (döndüren)  bir sorgu yazın.
+Answer:
+SELECT AlbumId, Title, ArtistId 
+FROM albums;
+
+VEYA
+SELECT * 
+FROM albums;
+
+Find the name of composers of each track using tracks table.
+Müzik parçaları tablosunu kullanarak her parçaya ait bestecinin ismini bulun.
+
+Answer:
+SELECT DISTINCT Composer 
+FROM tracks;
+
+Write a query that returns distinct manager AlbumId, MediaTypeId pair. 
+
+Müzik parçaları tablosunu kullanarak AlbumId, MediaTypeId sütun çiftini benzersiz bir şekilde döndürecek bir sorgu yazın.
+
+Answer:
+
+SELECT DISTINCT AlbumId, MediaTypeId 
+FROM tracks;
+
+Find the track names of Jimi Hendrix(composer).
+
+Besteci Jimi Hendrix’in parça isimlerini bulun.
+
+Answer:
+SELECT Name 
+FROM tracks 
+WHERE Composer = 'Jimi Hendrix';
+
+Find all the info of the invoices of which total amount is greater than $10.
+Toplam tutarı 10 dolardan fazla olan faturaların tüm bilgilerini bulun.
+Answer:
+SELECT * 
+FROM invoices 
+WHERE total > 10;
+
+Find all the info of the invoices of which total amount is greater than $10. Just return the first 4 rows.
+Toplam tutarı 10 dolardan fazla olan faturaların tüm bilgilerini bulun ve sadece ilk 4 satırı döndürün
+Answer:
+SELECT * FROM invoices
+WHERE Total > 10
+LIMIT 4;
+
+Find all the info of the invoices of which total amount is greater than $10. Then sort them by the total amount in descending order.
+Toplam tutarı 10 dolardan fazla olan faturaların tüm bilgilerini bulun. Tabloyu, toplam tutara göre azalan düzende (büyükten küçüğe doğru) sıralayın.
+
+Answer:
+
+SELECT * FROM invoices
+WHERE Total > 10
+ORDER BY Total DESC;
+
+Find all the info of the invoices of which billing country is not USA. Then sort them by the total amount in ascending order.
+
+Fatura ülkesi ABD olmayan faturaların tüm bilgilerini bulun. Ardından, Tabloyu toplam tutara göre artan düzende (küçükten büyüğe doğru) sıralayın.
+Answer: 
+
+SELECT * FROM invoices
+WHERE NOT BillingCountry = 'USA'
+ORDER BY Total;
+
+Find the newest invoice date among the invoice dates between 2009 and 2011.
+
+2009 ve 2011 arasındaki fatura tarihleri arasında en yeni tarihli faturayı bulun.
+Answer:
+SELECT InvoiceDate FROM invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2012-01-01'
+ORDER BY InvoiceDate DESC
+LIMIT 1;
+
+Find the first and last name of the customers who gave an order from Belgium, Norway, Canada and USA.
+
+Belçika, Norveç, Kanada ve ABD'den sipariş veren müşterilerin adını ve soyadını bulun.
+
+Answer:
+SELECT FirstName, LastName 
+FROM customers
+WHERE Country IN ('Belgium', 'Norway', 'Canada', 'USA')
+
+
+
+
+
+Find the track names of Bach.
+BESTECİ, Johann Sebastian Bach ismi aklımıza gelmedi. Sadece soyismini hatırlıyorsunuz. Bu kapsamda sadece soyismini kullanarak Bach'ın parça adlarını bulun.
+Answer:
+
+SELECT Name, Composer
+FROM tracks
+WHERE Composer LIKE ‘%Bach’
+
+AGGREGATE FUNCTION
+
+How many invoices are in the digital music store?
+
+Digital müzik marketimizde ne kadar fatura olduğunu bulalım.
+
+Answer:
+
+SELECT COUNT(*)
+FROM invoices;
+
+How many composers are there in the digital music store?
+
+Digital müzik marketimizde kaç tane besteci olduğunu bulalım.
+
+Answer:
+
+SELECT COUNT (distinct AlbumId) 
+FROM Tracks;
+
+Find the track name having the minimum duration.
+
+Çalma süresi en az olan parça ismini bulalım.
+
+Answer:
+SELECT Name, MIN(Milliseconds) AS Min_Duration
+FROM tracks;
+
+Find the track name having the maximum duration.
+Çalma süresi en fazla olan parça ismini bulalım.
+Answer:
+	     SELECT Name, MAX(Milliseconds) AS Min_Duration
+                 FROM tracks;
+
+How much money did our store earn?
+
+Mağazamızın ne kadar para kazandığını bulalım.
+
+Answer:
+
+SELECT SUM(Total)
+FROM invoices;
+
+How many distinct years in the invoices table?
+
+Faturalar tablomuzda kaç farklı yıl vardır?
+
+Answer:
+
+SELECT DISTINCT strftime('%Y', InvoiceDate) 
+FROM invoices;
+
+
+Find the tracks having duration bigger than the average duration.
+
+Müzik parçalarının ortalama çalma süresinden büyük çalma süresine sahip parçaları bulun.
+
+Answer:
+
+SELECT avg(Milliseconds)
+FROM tracks;                        ➔ 393599.212103911
+
+then use the result in second query
+
+ilk sorgudan elde etiğimiz değeri 2. sorguda kullanıyoruz.
+
+SELECT * 
+FROM tracks 
+WHERE Milliseconds > 393599.212103911;
+
+Find the total number of each composer’s track. Your result will include name of the composer and number.
+
+Her besteciye ait parçaların toplam sayısını bulun. Sonucunuz bestecinin adını ve parça sayısını içerecektir.
+Answer:
+SELECT Composer, COUNT(TrackId) AS count_of_tracks
+FROM tracks
+GROUP BY Composer;
+
+
+How many customers do we have from each country? Your result will include name of the country and number.
+
+Her ülkeden kaç müşterimiz var? Sonucunuz ülke adını ve müşteri sayısını içerecektir.
+
+Answer:
+
+SELECT Country, COUNT(CustomerId) AS num_of_country
+FROM customers
+GROUP BY Country;
+
+Find the minimum duration of track for each album. Your result will include album id and min duration.
+
+Her albüm için minimum parça süresini bulun. Sonucunuz albüm ıd ve minimum süreyi içerecektir.
+
+Answer:
+SELECT AlbumId, MIN(Milliseconds) AS min_duration
+FROM tracks
+GROUP BY AlbumId;
+
+Find the total amount of invoice for each country. Your result will include country name and total amount.
+
+Her ülke için toplam fatura tutarını bulun. Sonucunuz ülke adını ve toplam tutarı içerecektir.
+
+Answer:
+
+SELECT BillingCountry, SUM(Total)
+FROM invoices
+GROUP BY BillingCountry;
+
+
+
+
+
+
+
+

@@ -309,6 +309,24 @@ FROM employees
 LEFT OUTER JOIN departments ON
 employees.emp_id = departments.emp_id WHERE gender = 'Male';
 
+
+SELECT t.Name, g.name
+FROM tracks AS t
+JOin genres AS g
+ON t.GenreId = g.GenreId 
+
+
+### To give a name joined new table start with 
+SELECT * FROM (JOINED TABLES COMMAND) newtable_name
+See the example below###
+
+SELECT * FROM (SELECT t.Name, g.name
+FROM tracks AS t
+JOin genres AS g
+ON t.GenreId = g.GenreId) newtablename;
+
+
+
 ----------------------------------------------------
 Below this point prepared by C8162 - Aziz! 
 

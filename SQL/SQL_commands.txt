@@ -240,7 +240,7 @@ FROM invoices
 GROUP BY BillingCountry;
 
 ---------------------------------------------
-
+---------------------------------------------
 SELECT columns
 FROM table_A
 INNER JOIN table_B
@@ -308,3 +308,77 @@ departments.dept_id
 FROM employees
 LEFT OUTER JOIN departments ON
 employees.emp_id = departments.emp_id WHERE gender = 'Male';
+
+----------------------------------------------------
+Below this point prepared by C8162 - Aziz! 
+
+SELECT COUNT (InvoiceId)
+FROM invoices;
+
+SELECT COUNT(DISTINCT composer)
+FROM tracks;
+
+SELECT MIN(salary) AS lowest_salary
+FROM employees;
+
+SELECT MIN(hire_date) AS earliest_date
+FROM employees;
+
+SELECT *
+FROM tracks;
+
+SELECT name, MIN(Milliseconds) AS min_of_duration
+FROM tracks;
+
+SELECT name, MAX(Milliseconds) AS max_of_duration
+FROM tracks;
+
+SELECT SUM(salary) AS total_salary
+FROM employees;
+
+SELECT *
+FROM invoices;
+SELECT SUM(total)
+FROM invoices;
+
+SELECT *
+FROM invoices;
+SELECT DISTINCT strftime('%Y', InvoiceDate) AS Year
+FROM invoices;
+
+SELECT *
+FROM tracks;
+SELECT AVG(Milliseconds)
+FROM tracks;
+
+SELECT *
+FROM tracks
+WHERE Milliseconds > 393599.212103911;
+
+SELECT gender, job_title COUNT(job_title)
+FROM employees
+WHERE job_title = 'Data Scientist'
+GROUP BY gender, job_title;
+
+SELECT Composer, COUNT(name)
+FROM tracks
+WHERE Composer IS NULL
+GROUP BY Composer;
+
+SELECT *
+FROM tracks
+SELECT Composer, COUNT(name)
+FROM tracks
+WHERE Composer IS NOT NULL
+GROUP BY Composer;
+
+SELECT *
+FROM tracks
+
+SELECT Country, COUNT(CustemerId)
+FROM customers
+GROUP BY Country;
+
+SELECT Country, City COUNT(CustomerID), count(city)
+FROM customers
+group by Country, City

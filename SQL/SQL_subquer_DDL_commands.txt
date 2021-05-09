@@ -147,4 +147,158 @@ ADD COLUMN column_definition;
 
 DROP TABLE table_name;
 
+***********************************************************
+May 8, 2021 Inclass Notes!!!
+
+SELECT AlbumId, name, MIN(Milliseconds) AS min_duration
+FROM tracks
+GROUP BY AlbumId
+HAVING MIN(Milliseconds) > 340000
+ORDER BY min_duration DESC ;
+
+### To use having , it has to be group by and aggravation(min, max)
+
+SELECT AlbumId, name, MIN(Milliseconds) AS min_duration
+FROM tracks
+WHERE AlbumId  >  10
+GROUP BY AlbumId
+HAVING MIN(Milliseconds) > 340000
+ORDER BY min_duration DESC ;
+
+
+
+
+
+SELECT t. AlbumId, a.Title, SUM(Milliseconds) AS total_duration
+FROM tracks t
+INNER JOIN albums a ON t.AlbumId = a.AlbumId
+GROUP BY t.AlbumId, a.Title
+HAVING total_duration > 340000
+ORDER BY total_duration DESC ;
+
+
+SELECT TrackId, name, AlbumId
+FROM tracks
+WHERE AlbumId = (SELECT AlbumId FROM albums WHERE Title = 'Faceless');
+
+
+
+SELECT t.TrackId, [t.name](http://t.name/), t.AlbumId, a.Title
+FROM tracks t
+JOIN albums a ON a.AlbumId = t.AlbumId
+WHERE a.Title = 'Faceless'
+
+
+
+SELECT TrackId, name, AlbumId
+FROM tracks
+WHERE AlbumId IN (SELECT AlbumId
+FROM albums
+WHERE Title IN('Faceless', 'Let There Be Rock'))
+
+
+
+CREATE TABLE employee
+	(first_name VARCHAR (15),
+	 last_name VARCHAR(20),
+	 age INT,
+	 hire_date DATE);
+
+
+
+DROP TABLE IF EXISTS vocation_plan;
+CREATE TABLE vocation_plan
+	(place_id INT,
+	country VARCHAR(20),
+	hotel_name TEXT,
+	employee_id INT,
+	vocation_length INT,
+	budget REAL);
+
+
+
+
+### PRIMARY KEY / FOREIGN KEY ****
+
+
+CREATE TABLE customers2
+	(customer_id INT PRIMARY KEY,
+	first_name TEXT NOT NULL,
+	last_name TEXT NOT NULL)
+									
+CREATE TABLE orders2
+	(order_id INT PRIMARY KEY,
+	order_number INT,
+	customer_id INT,
+	FOREIGN KEY (customer_id) REFERENCES customers2 (customer_id));
+
+INSERT INTO customers2 (customer_id, first_name, last_name)
+VALUES (1, 'John', 'King'),
+	(2, 'Johnson', 'Gold'),
+	(3, 'Martin', 'Walker')
+
+INSERT INTO orders2 (order_id, order_number, customer_id)
+VALUES (1, 101, 1),
+	(2, 102, 2),
+	(3, 103, 3);
+
+
+
+
+DROP TABLE IF EXISTS vocation_plan;
+CREATE TABLE vocation_plan
+	(place_id INT PRIMARY KEY,
+	country VARCHAR(20),
+	hotel_name CHAR (20) NOT NULL,
+	EmployeeId INT,
+	vocation_length INT,
+	budget REAL,
+	FOREIGN KEY (EmployeeId) REFERENCES employees (EmployeeId));
+
+INSERT INTO vocation_plan
+(place_id, country, hotel_name, EmployeeId, vocation_length, budget)
+VALUES
+(1, 'Canada', 'Hilton', 1, 5, 10000),
+(2, 'USa', 'Sheraton', 1, 5, 10000),
+(3, 'Turkey', 'Erzincan plus', 1, 8, 500);
+
+ALTER TABLE vocation_plan
+ADD city TEXT;
+
+ALTER TABLE vocation_plan
+RENAME TO new_vocation_plan;
+
+ALTER TABLE new_vocation_plan
+RENAME COLUMN city TO State;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,17 @@
+- cd Downloads
+- ls
+	demo.pen
+- chmod 400 demo.pen
+- ls -l demo.pen
+	-r--------@ 1 tepe  staff  1704 15 Jun 08:32 demo.pem
+- ssh -i "demo.pem" ec2-user@ec2-34-207-125-204.compute-1.amazonaws.com
+- sudo yum update -y
+- sudo yum install httpd -y
+- sudo systemctl status httpd
+- sudo systemctl start httpd
+- sudo systemctl status httpd
+- sudo chmod -R 777 /var/www/html
+- cd /var/www/html
+- ls
+- sudo wget https://raw.githubusercontent.com/fatihtepe/fatihtepe.github.io/master/contact.html
+- sudo systemctl restart httpd

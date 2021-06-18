@@ -1,4 +1,4 @@
-<img src="flask.png">
+![Flask](./flask.png)
 
 ```
     1  exit

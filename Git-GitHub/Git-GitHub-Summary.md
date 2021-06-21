@@ -17,6 +17,21 @@ Before you start using Git, you have to make it available on your computer. Even
 - git config --global user.email "fatihtepe@gmail.com"
 - git config --global core.editor "vim"
 ```
+## The easiest and fastest way of creating GitHub repo!
+
+```
+1. Sign into https://github.com (give a name (for example 
+	"creating_repoManual" this name will be directory name on your 
+	computer , select initiating Add a README file, Public etc.)
+2. Click 'Create repository' button
+3. Copy https url address [https://github.com/fatihtepe/creating_repoManual.git]
+4. Open Terminal
+5. cd  where you keep your git repos
+6. git clone h[ttps://github.com/fatihtepe/creating_repoManual.git] 
+	You are done! you cloned your github repository to your working area
+7. You don`t need to use git init to initiate a repo when you clone it from remote
+```
+
 
 ## Create a local repo on your computer then push to Github
 
@@ -49,12 +64,10 @@ Before you start using Git, you have to make it available on your computer. Even
 	computer , select initiating Add a README file, Public etc.)
 2. Click 'Create repository' button
 3. Copy https url address [https://github.com/fatihtepe/creating_repoManual.git]
-	https://github.com/fatihtepe/creating_repoManual.git)
 4. Open Terminal
 5. cd  where you keep your git repos
 6. git clone h[ttps://github.com/fatihtepe/creating_repoManual.git]
-	(https://github.com/fatihtepe/creating_repoManual.git) 
-	now we cloned your github repository to our working area
+	now you cloned your github repository to your working area
 7. cd creating_repo Manual 
 8. You don`t need to use git init to initiate a repo when you clone it from remote
 9. git branch (before creating new new branch let's check where we are 

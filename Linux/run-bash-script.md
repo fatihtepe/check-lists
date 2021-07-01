@@ -20,7 +20,7 @@ export PATH="$PATH:$HOME/myscript"
 source .zshrc
 ```
 
-`Final Note ==> you need to save all your script file in myscript directory. Then, anywhere on your computer you can run your scripts. DO NOT FORGET TO MAKE your script files executable:`
+`Final Note ==> you need to save all your script files in myscript directory. Then, anywhere on your computer you can run your scripts. DO NOT FORGET TO MAKE your script files executable:`
 
 ```
 chmod 755 scripfilename.sh

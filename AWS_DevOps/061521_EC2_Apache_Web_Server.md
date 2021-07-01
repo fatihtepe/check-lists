@@ -1,3 +1,4 @@
+```
 - cd Downloads
 - ls
 	demo.pen
@@ -15,7 +16,7 @@
 - ls
 - sudo wget https://raw.githubusercontent.com/fatihtepe/fatihtepe.github.io/master/contact.html
 - sudo systemctl restart httpd
-
+```
 
 `Roles` `IAM` `EC2-S3`
 

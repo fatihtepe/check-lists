@@ -30,3 +30,20 @@ aws s3 cp s3://osvaldo-pipeline-pro-2/cat.jpg .
 systemctl start httpd
 systemctl enable httpd
 ```
+
+# EC2-S3
+
+```
+#!/bin/bash
+yum update -y
+yum install -y httpd
+chmod -R 777 /var/www/html
+cd /var/www/html
+aws s3 cp s3://catssss/static-web/cat0.jpg .
+aws s3 cp s3://catssss/static-web/cat1.jpg .
+aws s3 cp s3://catssss/static-web/cat2.jpg .
+aws s3 cp s3://catssss/static-web/cat3.png .
+aws s3 cp s3://catssss/static-web/index.html .
+systemctl start httpd
+systemctl enable httpd
+```

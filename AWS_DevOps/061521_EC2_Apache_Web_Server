@@ -15,3 +15,18 @@
 - ls
 - sudo wget https://raw.githubusercontent.com/fatihtepe/fatihtepe.github.io/master/contact.html
 - sudo systemctl restart httpd
+
+
+`Roles` `IAM` `EC2-S3`
+
+```
+#!/bin/bash
+yum update -y
+yum install -y httpd
+chmod -R 777 /var/www/html
+cd /var/www/html
+aws s3 cp s3://osvaldo-pipeline-pro-2/index.html .
+aws s3 cp s3://osvaldo-pipeline-pro-2/cat.jpg .
+systemctl start httpd
+systemctl enable httpd
+```

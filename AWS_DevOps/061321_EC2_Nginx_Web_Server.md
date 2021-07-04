@@ -25,8 +25,8 @@ systemctl start nginx
 cd /usr/share/nginx/html
 chmod -R 777 /usr/share/nginx/html
 rm index.html
-wget https://raw.github...
-wget https://raw.github...
+wget https://raw.githubusercontent.com/awsdevopsteam/ngniex/master/index.html
+wget https://raw.githubusercontent.com/awsdevopsteam/ngniex/master/ryu.jpg
 systemctl restart nginx
 systemctl enable nginx
 ```

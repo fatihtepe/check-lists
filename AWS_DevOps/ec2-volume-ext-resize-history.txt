@@ -1,0 +1,110 @@
+    1  clear
+    2  export PS1="\[\e[36m\]\u\[\e[m\]@\h-\w:\[\e[31m\]\\$\[\e[m\] "
+    3  clear
+    4  lsblk
+    5  df -h
+    6  clear
+    7  lsblk
+    8  df -h
+    9  lsblk
+   10  df -h
+   11  clear
+   12  sudo file -s /dev/xvdf
+   13  sudo mkfs -t ext4 /dev/xvd
+   14  sudo mkfs -t ext4 /dev/xvdf
+   15  df -h
+   16  sudo file -s /dev/xvdf
+   17  clear
+   18  sudo mkdir /mnt/2nd-vol/
+   19  ls
+   20  lsblk
+   21  sudo mount /dev/xvdf /mnt/2nd-vol/
+   22  lsblk
+   23  df -h
+   24  clear
+   25  df -h
+   26  ls /mnt/2nd-vol
+   27  sudo touch hello.txt
+   28  ls
+   29  rm -r hello.txt 
+   30  ls
+   31  cd /mnt/2nd-vol
+   32  sudo touch hello.txt
+   33  ls
+   34  lsblk
+   35  clear
+   36  ls
+   37  lsblk
+   38  df -h
+   39  sudo resize2fs /dev/xvdf
+   40  df -h
+   41  ls /mnt/2nd-vol
+   42  clear
+   43  ls
+   44  df -h
+   45  lsblk
+   46  df -h
+   47  sudo fdisk -l
+   48  clear
+   49  sudo fdisk /dev/xvdg
+   50  df -h
+   51  lsblk
+   52  clear
+   53  lsblk
+   54  df -h
+   55  sudo mkfs -t ext /dev/xvdg1
+   56  sudo mkfs -t ext4 /dev/xvdg1
+   57  sudo mkfs -t ext4 /dev/xvdg2
+   58  sudo mkdir /mnt/3rd-vol-part1
+   59  sudo mkdir /mnt/3rd-vol-part2
+   60  lsblk
+   61  cleaar
+   62  clear
+   63  lsblk
+   64  df -h
+   65  cd 
+   66  ls
+   67  cd /mnt
+   68  ls
+   69  clear
+   70  sudo mount /dev/xvdg1 /mnt/3rd-vol-part1/
+   71  sudo mount /dev/xvdg1 /mnt/3rd-vol-part2/
+   72  lsblk
+   73  sudo mount /dev/xvdg2 /mnt/3rd-vol-part2/
+   74  lsblk
+   75  sudo mount /dev/xvdg1 /mnt/3rd-vol-part1/
+   76  lsblk
+   77  clear
+   78  df -h
+   79  ls -lh /mnt/3rd-vol-part2/
+   80  sudo touch /mnt/3rd-vol-part2/fatihwashere.txt
+   81  ls -lh /mnt/3rd-vol-part2/
+   82  clear
+   83  lsblk
+   84  sudo growpart /dev/xvdg 2
+   85  lsblk
+   86  df -h
+   87  clear
+   88  lsblk
+   89  df -h
+   90  clear
+   91  sudo resize2fs /dev/xvdg2
+   92  df -h
+   93  sudo reboot now
+   94  clear
+   95  lsblk
+   96  df -h
+   97  cat fstab
+   98  cd /etc
+   99  cat fstab
+  100  clear
+  101  ls
+  102  cat fstab
+  103  clear
+  104  sudo cp /etc/fstab /etc/fstab.bak
+  105  ls
+  106  sudo nano /etc/fstab
+  107  sudo reboot now
+  108  history
+  109  cat history > history.txt
+  110  history > history.txt

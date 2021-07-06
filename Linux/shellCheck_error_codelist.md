@@ -1,4 +1,4 @@
-[ShellCheck error code list](https://gist.github.com/shinokada/edbe46d08d688933f3765ec573bf7d74)
+[ShellCheck error code list](https://gist.github.com/shinokada/edbe46d08d688933f3765ec573bf7d74) Thanks to [Shinichi Okada](https://gist.github.com/shinokada)
 
 ShellCheck is a shell script static analysis tool. By installing ShellCheck on your editor, you can avoid many beginner’s pitfalls. After installing it, you can run it on your terminal.
 `brew install shellcheck`

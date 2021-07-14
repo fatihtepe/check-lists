@@ -80,8 +80,44 @@
 ```
 ![listener](./img/img9.png)
 
-
-
+```
+- go under `CallApplicationLoadBalancer:`
+- write `listener` (list popup) select `AWS::ElasticLoadBalancingV2::Listener`.
+- rename `LogicalId` as `CallALBListener:`
+- keep `Type` as is
+- keep `Properties`
+- DefaultActions: # Required (list of actions)
+        - Type: forward # to TargetGroupArn 
+          TargetGroupArn: !Ref CallAlBTargetGroup *   
+      LoadBalancerArn: !Ref CallApplicationLoadBalancer * # Required
+      Port: 80
+      Protocol: HTTP
+- DELETE all other lines
+```
+![launctemplate](./img/img11.png)
+```
+- go under `CallALBListener`
+- write `launchtem` (list popup) select `ec2-launchtemplate`
+- rename `LogicalId` as `CallLaunchTemplate:`
+- keep `Type` as is
+- keep `Properties`
+- keep `ImageId` !FindInMap(it will be used mapping section go top under parameters section here we are using !FindInMap Function)
+	  - RegionImageMap
+          - !Ref AWS::Region
+          - AMI
+- keep `InstanceType`
+- keep `KeyName`
+- keep `SecurityGroupIds:` 
+	  - !GetAtt CallSecGroup.GroupId (getting attribute)
+- keep `UserData:` ==> !Base64 (Intrinsic function)*==> it is not encryption it is just encoding(convention)mainly transfer between servers.(write your bash script here under Base64)
+- DELETE all other lines
+```
+![mappings](./img/img12.png)
+```
+- go top under parameters section 
+- write `Mappings:`
+- under `Mappings` copy and past RegionImageMap: values (self created part)
+```
 
 
 
@@ -98,3 +134,15 @@
 * ![SecurityGroups IDs](./img/img6.png) `CallApplicationLoadBalancer's` securityGroups IDs 
 
 * ![GetAtt](./img/img7.png) `!GetAtt` function
+
+* ![LoadBalancerArn](./img/img10.png)
+
+* [AWS ARN](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)
+Amazon Resource Names (ARNs) uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS, such as in IAM policies, Amazon Relational Database Service (Amazon RDS) tags, and API calls.
+
+* An Amazon Resource Name (ARN) is a file naming convention used to identify a particular resource in the Amazon Web Services (AWS) public cloud. ARNs, which are specific to AWS, help an administrator track and use AWS items and policies across AWS products and API calls.
+
+[Fn::Base64](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-base64.html)
+The intrinsic function Fn::Base64 returns the Base64 representation of the input string. This function is typically used to pass encoded data to Amazon EC2 instances by way of the UserData property.
+
+[Fn::FindInMap](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-findinmap.html) The intrinsic function Fn::FindInMap returns the value corresponding to keys in a two-level map that is declared in the Mappings section.

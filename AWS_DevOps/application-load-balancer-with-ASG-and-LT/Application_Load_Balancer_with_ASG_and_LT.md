@@ -1,4 +1,8 @@
-## This template will create Application Load Balancer with ASG and LT.
+# This template will create Application Load Balancer with ASG and LT.
+
+![project template img](./img/img20.png)
+
+
 [WHOLE YAML FILE FOR THIS PROJECT](./alb-asg-cfn.yaml)
 
 ![img1.png](./img/img1.png)

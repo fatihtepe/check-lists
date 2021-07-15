@@ -1,4 +1,5 @@
 ## This template will create Application Load Balancer with ASG and LT.
+[WHOLE YAML FILE FOR THIS PROJECT](./alb-asg-cfn.yaml)
 
 ![img1.png](./img/img1.png)
 ```
@@ -102,11 +103,11 @@
 - keep `Type` as is
 - keep `Properties`
 - keep `ImageId` !FindInMap(it will be used mapping section go top under parameters section here we are using !FindInMap Function)
-	  - RegionImageMap
-          - !Ref AWS::Region
-          - AMI
-- keep `InstanceType`
-- keep `KeyName`
+	- RegionImageMap ==> (name of the map)
+    - !Ref AWS::Region
+    - AMI
+- keep `InstanceType`==> `!Ref CallInstanceType`(to give ref first we need to create instance type parameter, check below)
+- keep `KeyName` `!Ref CallKeyName` (to give ref we need to create KeyName parameter, check below)
 - keep `SecurityGroupIds:` 
 	  - !GetAtt CallSecGroup.GroupId (getting attribute)
 - keep `UserData:` ==> !Base64 (Intrinsic function)*==> it is not encryption it is just encoding(convention)mainly transfer between servers.(write your bash script here under Base64)
@@ -118,6 +119,81 @@
 - write `Mappings:`
 - under `Mappings` copy and past RegionImageMap: values (self created part)
 ```
+![KeyName](./img/img13.png)
+```
+- go top under parameters section 
+- write 'par` (list popup) select `parameter-type-keypair-keyname'
+- rename `ParaMeterName` as `CallKeyName:`
+- `Description: Select your key pair from the list`
+- keep `Type` as is 
+- Delete 'Default`
+```
+![instancetype](./img/img14.png)
+```
+- go top under parameters section 
+- write 'par` (list popup) select `parameter'
+- rename `ParaMeterName` as `CallInstanceType:`
+- `Description: Select the instance type for your web server.`
+- keep `Type` as is 
+- keep 'Default: t2.micro`
+- write `AllowedValues:` ==> (write list of instance as below)
+  - t2.micro
+  - t3.micro
+  - t3a.micro
+  - t3.nano
+  - t2.nano
+```
+![autoscalling](./img/img15.png)
+```
+- go under `CallLaunchTemplate` section
+- write `autos` (list popup) select `autoscalling-autoscalingroup`
+- rename `LogicalId` as `CallAutoScalingGroup:`
+- Type: AWS::AutoScaling::AutoScalingGroup (keep below part as written)
+    Properties:
+      AvailabilityZones: !GetAZs (use GetAZs function check below)
+      DesiredCapacity: "2"
+      HealthCheckGracePeriod: 90
+      HealthCheckType: ELB
+      LaunchTemplate:
+        LaunchTemplateId: !Ref CallLaunchTemplate
+        Version: "1"
+      MaxSize: "3" # Required
+      MinSize: "1" # Required
+      TargetGroupARNs:
+        - !Ref CallAlBTargetGroup 
+- DELETE all other lines
+```
+![cpupolicy](./img/img17.png)
+```
+- policy section
+- write `autosa` (list popup) select `autoscalling-scalinpolicy`
+- rename `LogicalId` as `CallCPUPolicy:`
+- Type: AWS::AutoScaling::ScalingPolicy
+- Properties:
+    AutoScalingGroupName: !Ref CallAutoScalingGroup (Ref ASG) # Required
+    PolicyType: TargetTrackingScaling
+    TargetTrackingConfiguration:
+      PredefinedMetricSpecification:
+          PredefinedMetricType: ASGAverageCPUUtilization (write here `pr` list popup and select `PredefinedMetricSpecification` and write `ASGAverageCPUUtilization`)
+      TargetValue: 40.0
+- DELETE all other lines
+```
+![output](./img/img19.png)
+```
+- last part is `Outputs`
+- write `Outputs:`
+- write again `output`and (list popup) select `Outputs`
+- rename `LogicalId` as `AppURL:` 
+- `Description: URL of Calls App`
+- keep `Value` and delete other lines then write another function `!Join` then write below lines,
+      - "" ==> (delimeter)
+      - - "http://" 
+        - !GetAtt CallApplicationLoadBalancer.DNSName ==> (get DNSName of load balancer) 
+```
+
+## TEMPLATE IS READY FOR CLOUDFORMATION 
+[CLICK HERE](./alb-asg-cfn.yaml) 
+
 
 
 
@@ -146,3 +222,14 @@ Amazon Resource Names (ARNs) uniquely identify AWS resources. We require an ARN 
 The intrinsic function Fn::Base64 returns the Base64 representation of the input string. This function is typically used to pass encoded data to Amazon EC2 instances by way of the UserData property.
 
 [Fn::FindInMap](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-findinmap.html) The intrinsic function Fn::FindInMap returns the value corresponding to keys in a two-level map that is declared in the Mappings section.
+
+[Health checks for Auto Scaling instances](https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html) Health checks provided by Elastic Load Balancing (ELB). These health checks are disabled by default but can be enabled.
+![HealthCheckType](./img/img16.png)
+
+[Fn::GetAZs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getavailabilityzones.html)
+- Return value ==≥ 
+The list of Availability Zones for the region.
+<br>
+<br>
+
+![PolicyType](./img/img18.png)

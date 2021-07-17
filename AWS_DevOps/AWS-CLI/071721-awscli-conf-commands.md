@@ -93,6 +93,15 @@ aws s3 cp test.txt s3://benimbucketim/
 ```
 aws s3 ls s3://benimbucketim
 ```
+`remove file within bucket`
+```
+aws s3 rm s3://benimbucketim/ec2-jason
+```
+`remove empty bucket`
+```
+aws s3 rm s3://benimbucketim
+```
+
 `delete bucket with force`
 ```
 aws s3 rb s3://benimbucketim --force  # delete bucket

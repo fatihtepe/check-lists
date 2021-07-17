@@ -53,11 +53,6 @@ aws s3 ls user_name
 aws sts get-caller-identity
 ```
 
-`describes instance info`
-```
-aws ec2 describe-instances 
-```
-
 `creates s3 bucket` 
 ```
 aws s3 mb s3://benimbucketim
@@ -81,6 +76,12 @@ aws ec2 run-instances --generate-cli-skeleton > demo.json
 `runs ec2 with json file`
 ```
 aws ec2 run-instances --cli-input-json file://demo.json
+```
+
+
+`describes instance info`
+```
+aws ec2 describe-instances 
 ```
 
 `stops ec2 with id number`

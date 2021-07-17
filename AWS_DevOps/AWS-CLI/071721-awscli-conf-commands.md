@@ -104,7 +104,7 @@ aws s3 rm s3://benimbucketim
 
 `delete bucket with force`
 ```
-aws s3 rb s3://benimbucketim --force  # delete bucket
+aws s3 rb s3://benimbucketim --force  
 ```
 
 `will generate ec2 template`

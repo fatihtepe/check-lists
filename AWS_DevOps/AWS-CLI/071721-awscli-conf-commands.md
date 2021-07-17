@@ -95,7 +95,7 @@ aws s3 ls s3://benimbucketim
 ```
 `remove file within bucket`
 ```
-aws s3 rm s3://benimbucketim/ec2-jason
+aws s3 rm s3://benimbucketim/ec2-json
 ```
 `remove empty bucket`
 ```

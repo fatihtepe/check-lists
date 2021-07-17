@@ -89,6 +89,10 @@ aws s3 mb s3://benimbucketim
 aws s3 cp test.txt s3://benimbucketim/ 
 ```
 
+`list inside bucket`
+```
+aws s3 ls s3://benimbucketim
+```
 `delete bucket with force`
 ```
 aws s3 rb s3://benimbucketim --force  # delete bucket

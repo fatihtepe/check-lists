@@ -1,0 +1,151 @@
+    1  pws
+    2  pwd
+    3  clear
+    4  ls
+    5  clear
+    6  sudo apt-get update
+    7  sduo apt-get upgrade
+    8  sudo apt-get upgrade
+    9  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+   10  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip"
+   11  unzip awscliv2.zip
+   12  sudo ./aws/install
+   13  sudo apt install unzip
+   14  aws configure
+   15  unzip awscliv2.zip
+   16  aws confiugre
+   17  aws configure
+   18  sudo apt install awscli
+   19  aws s3 ls
+   20  aws configure
+   21  aws s3 ls
+   22  clear
+   23  ls
+   24  cd aws
+   25  ls
+   26  cd ..
+   27  ls
+   28  clear
+   29  aws --version
+   30  aws configure
+   31  clear
+   32  ls -a
+   33  .aws
+   34  cd .aws
+   35  ls
+   36  cd config
+   37  vim config
+   38  clear
+   39  aws configure --profile dev
+   40  clear
+   41  aws configure --profile dev
+   42  ls
+   43  cat credentials
+   44  clear
+   45  aws s3 ls --profile dev
+   46  export AWS_PROFILE=dev
+   47  aws s3 ls dev
+   48  ls
+   49  cat config
+   50  aws s3 ls
+   51  clear
+   52  export AWS_PROFILE=default
+   53  export AWS_PROFILE=dev
+   54  aws sts get-caller-identity
+   55  cat credentials 
+   56  aws sets get-caller-identity
+   57  aws sts get-caller-identity
+   58  cd 
+   59  clear
+   60  aws ec2 describe-instance
+   61  aws ec2 describe-instances
+   62  aws ubuntu describe-instances
+   63  aws ec2 describe-instances
+   64  aws configure
+   65  aws ec2 describe-instances
+   66  aws sts get-caller-identity
+   67  export AWS_PROFILE=default
+   68  aws sts get-caller-identity
+   69  aws ec2 describe-instances
+   70  aws configure
+   71  aws ec2 describe-instances
+   72  aws configure
+   73  aws ec2 describe-instances
+   74  aws configure
+   75  aws ec2 describe-instances
+   76  aws s3 mb s3://benimbucketim
+   77  aws s3 ls
+   78  clear
+   79  ls
+   80  touch test.txt
+   81  ls
+   82  aws s3 cp test.txt s3://benimbucketim/
+   83  aws s3 ls
+   84  aws s3 ls s3://benimbucketim
+   85  aws s3 rb s3://benimbucketim --force
+   86  aws s3 ld
+   87  aws s3 ls
+   88  aws ec2 run-instances --generate-cli-skeleton > demo.json
+   89  ls
+   90  vim demo.json 
+   91  aws ec2 run-instances --cli-input-json file://demo.jon
+   92  aws ec2 run-instances --cli-input-json file://demo.json
+   93  aws ec2 stop-instances --instance-ids i-001f367f22424af20
+   94  clear
+   95  aws sts get-caller-identity
+   96  clear
+   97  aws configure --profile ali
+   98  aws sts get-caller-identity
+   99  clear
+  100  aws s3 ls
+  101  aws s3 mb s3://benimbucketim
+  102  cleaer
+  103  clear
+  104  aws s3 ls
+  105  export AWS_PROFILE=ali
+  106  aws sts get-caller-identity
+  107  aws s3 ls
+  108  aws s3 ls default
+  109  aws s3 ls fetih
+  110  aws configure
+  111  .aws
+  112  cd .aws
+  113  ls
+  114  cat credentials
+  115  cd ..
+  116  clear
+  117  aws s3 ls dev
+  118  aws sts get-caller-identity
+  119  cd .aws
+  120  cat config
+  121  cd ..
+  122  aws s3 ls default
+  123  aws s3 ls dev
+  124  ls
+  125  cd .aws
+  126  ls
+  127  cat credentials
+  128  clear
+  129  aws ls s3 dev
+  130  cat credentials
+  131  clear
+  132  aws s3 ls default
+  133  export AWS_PROFILE=default
+  134  aws sts get-caller-identity
+  135  clear
+  136  aws s3 ls 
+  137  cd ..
+  138  clear
+  139  aws ec2 describe-instances
+  140  aws s3 rb s3://benimbucketim --force
+  141  aws s3 ls
+  142  clear
+  143  ls
+  144  cat demo.json 
+  145  aws ec2 describe-instances
+  146  cat demo.json
+  147  - aws ec2 run-instances --cli-input-json file://demo.json
+  148  aws ec2 run-instances --cli-input-json file://demo.json
+  149  aws ec2 stop-instances --instance-ids i-001f367f22424af20
+  150  aws ec2 stop-instances --instance-ids i-033f109dc5ec0e91a
+  151  history > 071721-aws-cli-history.txt

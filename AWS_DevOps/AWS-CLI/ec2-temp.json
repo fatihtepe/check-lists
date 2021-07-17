@@ -1,0 +1,7 @@
+{
+    "ImageId": "ami-0dc2d3e4c0f9ebd18",
+    "InstanceType": "t2.micro",
+    "KeyName": "aws",
+    "SecurityGroupIds": [ "sg-01799323ab49d416d"
+    ]
+}

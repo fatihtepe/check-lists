@@ -118,3 +118,7 @@ aws ec2 stop-instances --instance-ids i-001f367f22424af20
 ```
 aws iam list-users
 ```
+`to create a iam user`
+```
+aws iam create-user --user-name [aws-cli-user]
+```

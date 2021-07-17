@@ -53,19 +53,18 @@ aws sts get-caller-identity ==> to see who is default user
 aws ec2 describe-instances # describes instance info
 ```
 
-creates s3 bucket 
+`creates s3 bucket` 
 ```
 aws s3 mb s3://benimbucketim
 ```
-
+`copy file to bucket`
 ```
-aws s3 cp test.txt s3://benimbucketim/ # copy file to bucket
+aws s3 cp test.txt s3://benimbucketim/ 
 ```
-
+`delete bucket with force`
 ```
 aws s3 rb s3://benimbucketim --force  # delete bucket
 ```
-
 `will generate ec2 template`
 ```
 aws ec2 run-instances --generate-cli-skeleton > demo.json 

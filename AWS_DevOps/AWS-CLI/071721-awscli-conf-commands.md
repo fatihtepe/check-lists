@@ -66,6 +66,11 @@ aws s3 ls
 aws s3 ls --profile user_name  
 ```
 
+`to see all users`
+```
+aws configure list-profiles
+```
+
 ` to see who is active user`
 ```
 aws sts get-caller-identity

@@ -112,4 +112,7 @@ aws ec2 describe-instances
 ```
 aws ec2 stop-instances --instance-ids i-001f367f22424af20
 ```
-
+`to list iam users`
+```
+aws iam list-users
+```

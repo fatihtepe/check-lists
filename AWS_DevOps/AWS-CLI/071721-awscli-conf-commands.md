@@ -9,6 +9,8 @@ The AWS Command Line Interface (AWS CLI) is an open source tool that enables you
 
 [Installing, updating, and uninstalling the AWS CLI version 2 on Linux](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)
 
+[Named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+
 
 `install aws-cli to ubuntu` 
 

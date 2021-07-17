@@ -61,7 +61,7 @@ aws s3 ls
 
 `without changing default user you can check user_name's s3 bucket`
 ```
-aws s3 ls user_name  
+aws s3 ls --profile user_name  
 ```
 
 ` to see who is active user`

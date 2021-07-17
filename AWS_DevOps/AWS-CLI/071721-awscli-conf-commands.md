@@ -116,7 +116,14 @@ aws ec2 run-instances --generate-cli-skeleton > demo.json
 ```
 aws ec2 run-instances --cli-input-json file://demo.json
 ```
-
+`run an instance`
+```
+aws ec2 run-instances \
+   --image-id ami-0dc2d3e4c0f9ebd18 \
+   --count 1 \
+   --instance-type t2.micro \
+   --key-name [write key here without bracket]
+```
 
 `describes instance info`
 ```

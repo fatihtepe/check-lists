@@ -11,6 +11,7 @@ The AWS Command Line Interface (AWS CLI) is an open source tool that enables you
 
 [Named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
 
+[AWS CLI Command Reference](https://awscli.amazonaws.com/v2/documentation/api/latest/index.html)
 
 `install aws-cli to ubuntu` 
 

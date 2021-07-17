@@ -12,8 +12,12 @@ aws --version
 ```
 
 `install aws-cli to macOs`
+- install homebrew
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+- install awscli
+```
 brew install awscli
 ```
 

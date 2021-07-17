@@ -122,3 +122,8 @@ aws iam list-users
 ```
 aws iam create-user --user-name [aws-cli-user]
 ```
+
+`to delete an iam user`
+```
+aws iam delete-user --user-name [aws-cli-user]
+```

@@ -11,6 +11,9 @@ The AWS Command Line Interface (AWS CLI) is an open source tool that enables you
 
 [Named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
 
+[AWS CLI Command Reference](https://awscli.amazonaws.com/v2/documentation/api/latest/index.html)
+
+[Command completion](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html)
 
 `install aws-cli to ubuntu` 
 
@@ -86,9 +89,22 @@ aws s3 mb s3://benimbucketim
 aws s3 cp test.txt s3://benimbucketim/ 
 ```
 
+`list inside bucket`
+```
+aws s3 ls s3://benimbucketim
+```
+`remove file within bucket`
+```
+aws s3 rm s3://benimbucketim/ec2-json
+```
+`remove empty bucket`
+```
+aws s3 rm s3://benimbucketim
+```
+
 `delete bucket with force`
 ```
-aws s3 rb s3://benimbucketim --force  # delete bucket
+aws s3 rb s3://benimbucketim --force  
 ```
 
 `will generate ec2 template`
@@ -100,7 +116,14 @@ aws ec2 run-instances --generate-cli-skeleton > demo.json
 ```
 aws ec2 run-instances --cli-input-json file://demo.json
 ```
-
+`run an instance`
+```
+aws ec2 run-instances \
+   --image-id ami-0dc2d3e4c0f9ebd18 \
+   --count 1 \
+   --instance-type t2.micro \
+   --key-name [write key here without bracket]
+```
 
 `describes instance info`
 ```
@@ -112,3 +135,20 @@ aws ec2 describe-instances
 aws ec2 stop-instances --instance-ids i-001f367f22424af20
 ```
 
+`terminate ec2 instance`
+```
+aws ec2 terminate-instances --instance-ids i-0f8cbd611cc88a778
+```
+`to list iam users`
+```
+aws iam list-users
+```
+`to create an iam user`
+```
+aws iam create-user --user-name [aws-cli-user]
+```
+
+`to delete an iam user`
+```
+aws iam delete-user --user-name [aws-cli-user]
+```

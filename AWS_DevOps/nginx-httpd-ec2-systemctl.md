@@ -9,7 +9,7 @@ systemctl stop nginx
 ```
 or 
 ```
-systemctil stop httpd
+systemctl stop httpd
 ```
 to activate
 ```

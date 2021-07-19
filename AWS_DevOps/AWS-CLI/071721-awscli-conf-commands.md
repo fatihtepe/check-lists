@@ -38,7 +38,7 @@ aws --version
 brew install awscli
 ```
 
-`aws-cli configure`
+`aws configure`
 ```
 AWS Access Key ID [None]:
 AWS Secret Access Key [None]: 

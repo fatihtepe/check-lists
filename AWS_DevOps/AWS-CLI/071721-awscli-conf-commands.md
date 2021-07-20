@@ -139,6 +139,21 @@ aws ec2 stop-instances --instance-ids i-001f367f22424af20
 ```
 aws ec2 terminate-instances --instance-ids i-0f8cbd611cc88a778
 ```
+[InstanceState](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_InstanceState.html)
+```
+0 : pending
+
+16 : running
+
+32 : shutting-down
+
+48 : terminated
+
+64 : stopping
+
+80 : stopped
+```
+
 `to list iam users`
 ```
 aws iam list-users

@@ -15,7 +15,7 @@ The AWS Command Line Interface (AWS CLI) is an open source tool that enables you
 
 [Command completion](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html)
 
-`install aws-cli to ubuntu` 
+`install aws-cli to ubuntu`
 
 ```
 sudo apt-get update
@@ -41,14 +41,14 @@ brew install awscli
 `aws configure`
 ```
 AWS Access Key ID [None]:
-AWS Secret Access Key [None]: 
+AWS Secret Access Key [None]:
 Default region name [None]:
 Default output format [None]:
 ```
 
 `configures new_user profile`
 ```
-aws configure --profile new-user 
+aws configure --profile new-user
 ```
 
 `changes active user with new_user`
@@ -56,17 +56,17 @@ aws configure --profile new-user
 export AWS_PROFILE=new_user
 ```
 
-if you have more than one user.. let's say you have default user and new_user .. you can easily change default user `export AWS_PROFILE=new_user` new_user. 
+if you have more than one user.. let's say you have default user and new_user .. you can easily change default user `export AWS_PROFILE=new_user` new_user.
 For example, if you want to reach s3 bucket you should write
 
 `default user can list content of s3`
 ```
-aws s3 ls 
+aws s3 ls
 ```
 
 `without changing default user you can check user_name's s3 bucket`
 ```
-aws s3 ls --profile user_name  
+aws s3 ls --profile user_name
 ```
 
 `to see all users`
@@ -79,14 +79,14 @@ aws configure list-profiles
 aws sts get-caller-identity
 ```
 
-`creates s3 bucket` 
+`creates s3 bucket`
 ```
 aws s3 mb s3://benimbucketim
 ```
 
 `copy file to bucket`
 ```
-aws s3 cp test.txt s3://benimbucketim/ 
+aws s3 cp test.txt s3://benimbucketim/
 ```
 
 `list inside bucket`
@@ -104,12 +104,12 @@ aws s3 rm s3://benimbucketim
 
 `delete bucket with force`
 ```
-aws s3 rb s3://benimbucketim --force  
+aws s3 rb s3://benimbucketim --force
 ```
 
 `will generate ec2 template`
 ```
-aws ec2 run-instances --generate-cli-skeleton > demo.json 
+aws ec2 run-instances --generate-cli-skeleton > demo.json
 ```
 
 `runs ec2 with json file`
@@ -127,7 +127,7 @@ aws ec2 run-instances \
 
 `describes instance info`
 ```
-aws ec2 describe-instances 
+aws ec2 describe-instances
 ```
 
 `stops ec2 with id number`
@@ -170,4 +170,27 @@ aws iam delete-user --user-name [aws-cli-user]
 `to see account aws account number`
 ```
 aws sts get-caller-identity --query Account --output text
+```
+`Go to Amazon DynamoDB Load Data into Tables and download sampledata.zip file to the local with wget command.`
+
+```
+wget https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/samples/sampledata.zip
+```
+
+`Unzip sampledata.zip file into the dynamodb folder.There should be four unzipped files.`
+
+```
+unzip sampledata.zip
+```
+
+`Upload sample data into the DynamoDB tables; Populate the ProductCatalog table with data using AWS CLI.`
+
+```
+aws dynamodb batch-write-item --request-items file://ProductCatalog.json
+```
+
+`Populate the Forum table with data using AWS CLI.`
+
+```
+aws dynamodb batch-write-item --request-items file://Forum.json
 ```

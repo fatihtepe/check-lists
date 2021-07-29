@@ -167,3 +167,7 @@ aws iam create-user --user-name [aws-cli-user]
 ```
 aws iam delete-user --user-name [aws-cli-user]
 ```
+`to see account aws account number`
+```
+aws sts get-caller-identity --query Account --output text
+```

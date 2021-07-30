@@ -183,7 +183,11 @@ wget https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/samples/sa
 unzip sampledata.zip
 ```
 
-`Populate --> Insert data in to the tables--Upload sample data into the DynamoDB tables; Populate the ProductCatalog table with data using AWS CLI.`
+`Populate --> Insert data in to the tables`
+
+`CRUD`(Create, REado or Retrieve, Update, Delete) Operatons
+
+`Upload sample data into the DynamoDB tables; Populate the ProductCatalog table with data using AWS CLI.`
 
 ```
 aws dynamodb batch-write-item --request-items file://ProductCatalog.json

@@ -185,7 +185,7 @@ unzip sampledata.zip
 
 `Populate --> Insert data in to the tables`
 
-`CRUD`(Create, REado or Retrieve, Update, Delete) Operatons
+`CRUD`(Create, Read or Retrieve, Update, Delete) Operatons
 
 `Upload sample data into the DynamoDB tables; Populate the ProductCatalog table with data using AWS CLI.`
 

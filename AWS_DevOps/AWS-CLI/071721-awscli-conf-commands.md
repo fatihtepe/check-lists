@@ -194,3 +194,39 @@ aws dynamodb batch-write-item --request-items file://ProductCatalog.json
 ```
 aws dynamodb batch-write-item --request-items file://Forum.json
 ```
+
+## Use the `--dryrun` Flag in the AWS CLI Before Performing Any Task on Production Resources
+
+Thanks to the --dryrun flag, the command-line output provides information about which files will be copied to S3. This command `only operates on CSV files` and doesn't move other files to S3:
+
+```
+aws s3 cp /path/to/local/files/ s3://demo-datasets/path/ --exclude "*" --include "*.csv" --dryrun
+```
+
+## Use --dryrun To Check if Two S3 buckets Are in Sync
+
+By using the aws s3 sync command, you can check whether S3 buckets (or specific paths) are in sync: If there are any differences, the --dryrun flag will show them in the console without transferring anything.
+
+```
+aws s3 sync s3://bucket1 s3://bucket2 --dryrun
+```
+## Use --dryrun To Check if an S3 Bucket and a Local Folder Are in Sync
+
+```
+aws s3 sync /Users/.../path/ s3://mybucket --dryrun
+```
+
+## Quickly Download Many Files From S3
+
+The last S3 command is `aws s3 cp`, which allows us to download all files from a specified S3 path:
+
+```
+aws s3 cp s3://mybucket /Users/.../path/ --recursive --storage-class STANDARD
+```
+
+In the same way, we can upload a bunch of files while specifying the S3 storage class that is most suitable to those objects:
+
+```
+aws s3 cp /Users/.../path/ s3://mybucket  --recursive --storage-class STANDARD
+```
+

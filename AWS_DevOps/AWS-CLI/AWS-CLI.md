@@ -1,3 +1,4 @@
+[Example: Create an IPv4 VPC and subnets using the AWS CLI](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-subnets-commands-example.html)
 # AWS CLI v2
 
 This bundle contains a built executable of the AWS CLI v2.
@@ -6,7 +7,7 @@ This bundle contains a built executable of the AWS CLI v2.
 
 To install the AWS CLI v2, run the `install` script:
 ```
-$ sudo ./install 
+$ sudo ./install
 You can now run: /usr/local/bin/aws --version
 ```
 This will install the AWS CLI v2 at `/usr/local/bin/aws`.  Assuming
@@ -23,7 +24,7 @@ CLI v2 only for the current user, run the `install` script with the `-b`
 and `-i` options:
 ```
 $ ./install -i ~/.local/aws-cli -b ~/.local/bin
-``` 
+```
 This will install the AWS CLI v2 in `~/.local/aws-cli` and create
 symlinks for `aws` and `aws_completer` in `~/.local/bin`. For more
 information about these options, run the `install` script with `-h`:

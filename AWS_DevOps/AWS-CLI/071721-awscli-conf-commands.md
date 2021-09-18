@@ -234,3 +234,8 @@ In the same way, we can upload a bunch of files while specifying the S3 storage 
 aws s3 cp /Users/.../path/ s3://mybucket  --recursive --storage-class STANDARD
 ```
 
+`sync static-web`
+```
+aws s3 sync static-web s3://kittens.clarusway.us
+```
+
